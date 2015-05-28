@@ -59,7 +59,6 @@ public class RedditTexasHoldEmChallenge {
         System.out.println(deck.deck.size());
         //Reset game
         repopulateDeck(deck, river, players);
-        System.out.println(deck.deck.size() +" " + river.size() +" " +players.size());
         
      
     }
