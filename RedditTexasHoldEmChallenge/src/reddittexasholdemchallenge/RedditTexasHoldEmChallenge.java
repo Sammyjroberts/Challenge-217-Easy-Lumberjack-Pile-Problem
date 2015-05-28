@@ -16,9 +16,9 @@ public class RedditTexasHoldEmChallenge {
         Scanner sc = new Scanner(System.in);
         int numPlayers;
         //Containers
-        Deck deck = new Deck();
-        ArrayList<Hand> players = new ArrayList();
-        ArrayList<Card> river = new ArrayList();
+        Deck deck = new Deck(); 
+        ArrayList<Hand> players = new ArrayList(); //Players Hands
+        ArrayList<Card> river = new ArrayList();   //The River
         
         //User defines number of players
         System.out.print("How many Players (2-8) ? ");
