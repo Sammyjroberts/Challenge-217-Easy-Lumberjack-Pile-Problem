@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     vector<node> sortedMap; // OUTPUT - Stored key value pairs
 
     //INPUT
-    myInput.open("bigtest.txt", std::ifstream::in);
+    myInput.open("input1.txt", std::ifstream::in);
     myInput >> size;    //Get size of storage area
     myInput >> numLogs; //Get number of logs to emplace
     
@@ -38,20 +38,18 @@ int main(int argc, char** argv) {
     }
     //PROCESSING
     q.sort(sortedMap);                      //Sort Map
-    sortedMap = q.toSort;                   //Place sorted map into the sortedMap
     
     //Add to the logs and resort
     while(numLogs != 0)
     {
         std::cout << numLogs << endl;
-        sortedMap[0].value++; //incrimient current piles value
+        q.toSort[0].value++; //incrimient current piles value
         numLogs--;            // subtract from num Logs
-        q.sort(sortedMap);    //resort
-        sortedMap = q.toSort;//copy back into map
+        q.sort(q.toSort);    //resort
     } //TODO increase efficentcy by implementing quicker sort for already ordered map
-      // TODO Don't copy every loop
     //OUTPUT
-    qByKey.sort(sortedMap); // sort by key
+    
+    qByKey.sort(q.toSort); // sort by key
     for(int lcv = 0; lcv < (size*size); lcv++)
     {
         //output by until a multiple of size is reached then end the line
@@ -63,6 +61,5 @@ int main(int argc, char** argv) {
     }
     return 0;
 }
-
 
 
